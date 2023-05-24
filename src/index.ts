@@ -2,7 +2,11 @@ export type Player = "X" | "O";
 export function createGame() {
   return {
     getPlayers: () => {
-      return new Array<Player>(2);
+      const players: Player[] = ["X", "O"];
+      return Array.from(players);
+    },
+    getBoard: () => {
+      return [];
     },
   };
 }
