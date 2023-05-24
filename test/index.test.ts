@@ -14,9 +14,17 @@ describe("Juego", () => {
     expect(players).toContain("O");
   });
 
-  test("Juego debe tener un tablero", () => {
+  test("Juego debe tener un tablero con nueve posiciones", () => {
     const game = createGame();
     const board = game.getBoard();
     expect(board).toBeDefined();
+    expect(board.length).toBe(9);
+  });
+
+  test("El Juego comienza con el jugador X", () => {
+    const game = createGame();
+    const currentPlayer = game.getCurrentPlayer();
+    expect(currentPlayer).toBeDefined();
+    expect(currentPlayer).toBe("X");
   });
 });
